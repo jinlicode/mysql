@@ -1,5 +1,7 @@
 FROM debian:buster-slim
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
@@ -57,7 +59,6 @@ RUN set -ex; \
 
 ENV MYSQL_MAJOR 5.7
 ENV MYSQL_VERSION 5.7.31-1debian10
-ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo "deb http://repo.mysql.com/apt/debian/ buster mysql-${MYSQL_MAJOR}" > /etc/apt/sources.list.d/mysql.list
 
