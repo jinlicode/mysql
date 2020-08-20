@@ -26,7 +26,7 @@ jobs:
           buildx-version: latest
       - name: Build dockerfile (with push)
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME_ALIYUN }}
         run: |
           docker buildx build \
           --platform=linux/amd64 \
