@@ -3,7 +3,7 @@ name: Build And Push Image
 on:
   push:
     branches:
-      - "v1"
+      - "master"
     paths-ignore:
       - "README.md"
 
